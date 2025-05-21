@@ -2,3 +2,10 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - external-dns.yaml
+
+configMapGenerator:
+  - name: external-dns-common-values
+    files:
+      - common.values.yaml
+    options:
+      disableNameSuffixHash: true

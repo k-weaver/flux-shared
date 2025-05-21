@@ -25,3 +25,7 @@ spec:
         kind: HelmRepository
         name: external-dns
         namespace: flux-system
+  valuesFrom:
+    - configMapKeyRef:
+        name: external-dns-common-values
+        key: common.values.yaml
