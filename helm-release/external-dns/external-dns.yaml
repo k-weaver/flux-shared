@@ -1,7 +1,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: HelmRepository
 metadata:
-  name: external-dns
+  name: external-dns-repo
   namespace: flux-system
 spec:
   interval: 60m
@@ -15,7 +15,7 @@ metadata:
 spec:
   interval: 5m
   dependsOn:
-    - name: external-dns
+    - name: external-dns-repo
       namespace: flux-system
   chart:
     spec:
