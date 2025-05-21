@@ -5,6 +5,9 @@ metadata:
   namespace: kube-system
 spec:
   interval: 5m
+  dependsOn:
+    - name: prometheus
+      namespace: flux-system
   chart:
     spec:
       chart: prometheus-adapter
@@ -13,5 +16,3 @@ spec:
         kind: HelmRepository
         name: prometheus
         namespace: flux-system
-  values:
-    # Inline environment-specific values can be provided here
