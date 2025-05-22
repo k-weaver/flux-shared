@@ -7,7 +7,7 @@ spec:
   interval: 5m
   dependsOn:
     - name: external-dns-repo
-      namespace: flux-system
+      namespace: kube-system
   chart:
     spec:
       chart: external-dns
@@ -15,7 +15,6 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: external-dns-repo
-        namespace: flux-system
   # valuesFrom:
   #   - configMapKeyRef:
   #       name: external-dns-common-values
