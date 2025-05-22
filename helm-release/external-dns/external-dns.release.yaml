@@ -22,8 +22,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: external-dns-repo
-  # valuesFrom:
-  #   - configMapKeyRef:
-  #       name: external-dns-common-values
-  #       namespace: kube-system
-  #       key: common.values.yaml
+  valuesFrom:
+    - kind: ConfigMap
+      name: external-dns-common-values
+      valuesKey: common.values.yaml
