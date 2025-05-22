@@ -3,5 +3,5 @@ serviceAccount:
   create: true
   name: 'external-dns-sa'
 serviceMonitor:
-  enabled: true
+  enabled: false
   interval: 30s
