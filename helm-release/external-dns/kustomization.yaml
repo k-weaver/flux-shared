@@ -6,6 +6,7 @@ resources:
 
 configMapGenerator:
   - name: external-dns-common-values
+    namespace: kube-system
     files:
       - common.values.yaml
     options:
