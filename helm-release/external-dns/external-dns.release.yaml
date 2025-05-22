@@ -1,3 +1,13 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: HelmRepository
+metadata:
+  name: external-dns-repo
+  namespace: kube-system
+spec:
+  interval: 60m
+  url: https://kubernetes-sigs.github.io/external-dns
+---
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
@@ -5,9 +15,6 @@ metadata:
   namespace: kube-system
 spec:
   interval: 5m
-  dependsOn:
-    - name: external-dns-repo
-      namespace: kube-system
   chart:
     spec:
       chart: external-dns
